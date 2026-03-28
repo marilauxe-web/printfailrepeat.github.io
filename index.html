@@ -1193,7 +1193,16 @@ function closePanel() {
 }
 
 function inquire(name) {
-  alert(`To inquire about "${name}", contact us:\n\nInstagram: @printfailrepeat\n\nWe'll reply within 24 hours.`);
+  closePanel();
+  const select = document.querySelector('select[name="interest"]');
+  if (select) {
+    const options = Array.from(select.options);
+    const match = options.find(o => o.text.toLowerCase().includes(name.split(' ')[0].toLowerCase()));
+    if (match) match.selected = true;
+  }
+  setTimeout(() => {
+    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+  }, 350);
 }
 
 buildCards();
