@@ -856,6 +856,7 @@ const PRODUCTS = [
     cost:0.72,
     desc:"Tap-enabled NFC keychain with your logo embedded. Perfect for table-side digital menus, loyalty programs, or social links. Each chip is pre-programmed to your URL.",
     note:"+$25 design fee · NFC chip included",
+    video:"images/nfc-demo.mp4",
     photos:["images/nfc-keychain-1.jpg","images/nfc-keychain-2.jpg","images/nfc-keychain-3.jpg","images/nfc-keychain-4.jpg"]
   },
   {
@@ -1090,10 +1091,6 @@ function buildCards() {
   const nr = document.getElementById('noResults');
   PRODUCTS.forEach(p => {
     const pr = prices(p.cost);
-    const hasPhoto = p.photos.length > 0;
-    const imgHTML = hasPhoto
-      ? `<img src="${p.photos[0]}" alt="${p.name}" loading="lazy">`
-      : `<span class="ph">${p.emoji}</span>`;
     const dotsHTML = p.venues.map(v =>
       `<span class="venue-dot ${VENUE_META[v].cls}" title="${VENUE_META[v].label}"></span>`
     ).join('');
@@ -1137,13 +1134,22 @@ function openPanel(id) {
   const p = PRODUCTS.find(x => x.id === id);
   if (!p) return;
   const pr = prices(p.cost);
-  const hasPhotos = p.photos.length > 0;
-  const mainHTML = hasPhotos
-    ? `<img src="${p.photos[0]}" alt="${p.name}" id="pmImg">`
-    : `<span class="ph-lg">${p.emoji}</span>`;
-  const thumbsHTML = hasPhotos
-    ? p.photos.map((src,i) => `<div class="thumb ${i===0?'active':''}" onclick="swapImg('${src}',this)"><img src="${src}" alt=""></div>`).join('')
-    : `<div class="thumb active">${p.emoji}</div>`;
+  const allMedia = [...(p.photos || []), ...(p.video ? [p.video] : [])];
+const hasMedia = allMedia.length > 0;
+const mainHTML = hasMedia
+  ? (allMedia[0].endsWith('.mp4') || allMedia[0].endsWith('.mov')
+    ? `<video src="${allMedia[0]}" autoplay loop muted playsinline id="pmImg" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></video>`
+    : `<img src="${allMedia[0]}" alt="${p.name}" id="pmImg">`)
+  : `<span class="ph-lg">${p.emoji}</span>`;
+const thumbsHTML = hasMedia
+  ? allMedia.map((src,i) => {
+      const isVid = src.endsWith('.mp4') || src.endsWith('.mov');
+      const inner = isVid
+        ? `<span style="font-size:22px;">▶️</span>`
+        : `<img src="${src}" alt="">`;
+      return `<div class="thumb ${i===0?'active':''}" onclick="swapImg('${src}',this)">${inner}</div>`;
+    }).join('')
+  : `<div class="thumb active">${p.emoji}</div>`;
 
   // Dot-separated venue labels in red caps
   const venueLabels = {
@@ -1188,8 +1194,13 @@ function openPanel(id) {
 }
 
 function swapImg(src, thumb) {
-  const img = document.getElementById('pmImg');
-  if (img) img.src = src;
+  const isVideo = src.endsWith('.mp4') || src.endsWith('.mov');
+  const main = document.getElementById('panelMainPhoto');
+  if (isVideo) {
+    main.innerHTML = `<video src="${src}" autoplay loop muted playsinline style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></video>`;
+  } else {
+    main.innerHTML = `<img src="${src}" alt="" id="pmImg" style="width:100%;height:100%;object-fit:cover;">`;
+  }
   document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
   thumb.classList.add('active');
 }
