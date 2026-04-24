@@ -207,10 +207,8 @@ nav {
 }
 .filter-pill:hover { border-color: var(--ink); color: var(--ink); }
 .filter-pill.active { background: var(--ink); border-color: var(--ink); color: white; }
-.filter-pill.active.f-ramen  { background: var(--pop-red);   border-color: var(--pop-red); }
-.filter-pill.active.f-cafe   { background: var(--pop-teal);  border-color: var(--pop-teal); }
-.filter-pill.active.f-any    { background: var(--pop-blue);  border-color: var(--pop-blue); }
-.filter-pill.active.f-events { background: var(--pop-pink);  border-color: var(--pop-pink); }
+.filter-pill.active.f-restaurants { background: var(--pop-red);  border-color: var(--pop-red); }
+.filter-pill.active.f-events      { background: var(--pop-teal); border-color: var(--pop-teal); }
 
 .showing-label {
   font-family: 'DM Sans', sans-serif;
@@ -272,10 +270,8 @@ nav {
   width: 7px; height: 7px;
   border-radius: 50%;
 }
-.vd-ramen  { background: var(--pop-red); }
-.vd-cafe   { background: var(--pop-teal); }
-.vd-any    { background: var(--pop-blue); }
-.vd-events { background: var(--pop-pink); }
+.vd-restaurants { background: var(--pop-red); }
+.vd-events      { background: var(--pop-teal); }
 
 .card-body {
   padding: 10px 18px 18px;
@@ -463,6 +459,27 @@ nav {
   margin-bottom: 24px;
 }
 /* Pricing rows — clean list style like old design */
+.ptable-simple {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--ink-soft);
+  background: var(--cream);
+  border-radius: 12px;
+  padding: 16px 18px;
+  margin-bottom: 14px;
+  line-height: 1.6;
+}
+.ptable-simple strong {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--ink);
+}
+.ptable-simple em {
+  font-style: italic;
+  color: var(--ink);
+}
 .ptable {
   border: 1px solid var(--cream-dark);
   border-radius: 16px;
@@ -702,9 +719,9 @@ footer strong { font-family: 'Syne', sans-serif; font-weight: 800; color: rgba(2
 </nav>
 
 <div class="hero">
-  <p class="hero-eyebrow">Promotional &amp; Branded Goods</p>
-  <h1 class="hero-headline">Things<br>worth<br><em>printing.</em></h1>
-  <p class="hero-body">Usable, lovable things worth keeping · and sharing. Custom 3D printed merch that lives in your guests' pockets long after they leave.</p>
+  <p class="hero-eyebrow">Promotional &amp; Branded Swag</p>
+  <h1 class="hero-headline">Made for<br>your moment<br><em>to keep.</em></h1>
+  <p class="hero-body">Usable, Lovable things worth keeping. Custome 3D printer swag for your events, conferences and business.</p>
 </div>
 
 <div class="smart-banner">
@@ -715,13 +732,11 @@ footer strong { font-family: 'Syne', sans-serif; font-weight: 800; color: rgba(2
 
 <div class="catalog-section">
   <p class="filter-label">Filter</p>
-  <div class="filter-bar">
-    <button class="filter-pill active"   data-filter="all"    onclick="doFilter('all',this)">All</button>
-    <button class="filter-pill f-ramen"  data-filter="ramen"  onclick="doFilter('ramen',this)">🍜 Ramen / Asian</button>
-    <button class="filter-pill f-cafe"   data-filter="cafe"   onclick="doFilter('cafe',this)">☕ Café / Boba</button>
-    <button class="filter-pill f-any"    data-filter="any"    onclick="doFilter('any',this)">🍽️ Any Restaurant</button>
-    <button class="filter-pill f-events" data-filter="events" onclick="doFilter('events',this)">🎉 Events</button>
-  </div>
+<div class="filter-bar">
+  <button class="filter-pill active" data-filter="all" onclick="doFilter('all',this)">All</button>
+  <button class="filter-pill f-restaurants" data-filter="restaurants" onclick="doFilter('restaurants',this)">🍽️ Restaurants & Cafés</button>
+  <button class="filter-pill f-events" data-filter="events" onclick="doFilter('events',this)">🎉 Conferences & Events</button>
+</div>
   <p class="showing-label" id="showLabel">Showing <strong>all 17 products</strong></p>
   <div class="product-grid" id="grid">
     <div class="no-results" id="noResults">
@@ -738,12 +753,12 @@ footer strong { font-family: 'Syne', sans-serif; font-weight: 800; color: rgba(2
     <div class="contact-left">
       <p class="contact-eyebrow">Get In Touch</p>
       <h2 class="contact-headline">Let's make<br>something<br><em>worth keeping.</em></h2>
-      <p class="contact-body">Whether you're planning a grand opening, an event, or just want something your guests will actually hold onto — we'd love to hear about it.</p>
+      <p class="contact-body"><p class="contact-body">Planning a birthday party, conference, or grand opening? Tell us about it — we'll figure out the perfect piece together. No minimums, no corporate nonsense.</p>
       <div class="contact-perks">
-        <div class="contact-perk"><span class="contact-perk-dot"></span>Custom colors, quantities &amp; characters</div>
-        <div class="contact-perk"><span class="contact-perk-dot"></span>MOQ of just 1 unit — no minimums</div>
-        <div class="contact-perk"><span class="contact-perk-dot"></span>We reply within 24 hours</div>
-        <div class="contact-perk"><span class="contact-perk-dot"></span>Bulk pricing from 25 units</div>
+<div class="contact-perk"><span class="contact-perk-dot"></span>Birthdays, conferences, grand openings & more</div>
+<div class="contact-perk"><span class="contact-perk-dot"></span>Personalized for every guest if you want</div>
+<div class="contact-perk"><span class="contact-perk-dot"></span>No minimums — order 1 or 1,000</div>
+<div class="contact-perk"><span class="contact-perk-dot"></span>We reply within 24 hours</div>
       </div>
     </div>
     <div class="contact-form" id="contactForm">
@@ -777,7 +792,7 @@ footer strong { font-family: 'Syne', sans-serif; font-weight: 800; color: rgba(2
       </div>
       <div class="form-group">
         <label class="form-label">Message</label>
-        <textarea class="form-textarea" name="message" placeholder="Tell us about your venue, quantity, colors, timeline — anything helps!"></textarea>
+        <textarea class="form-textarea" name="message" placeholder="Tell us about your event, party, or business — dates, quantities, ideas, anything. We'll take it from there.></textarea>
       </div>
       <button class="form-submit" onclick="submitForm(event)">Send Message →</button>
       <div class="form-success" id="formSuccess">
@@ -852,7 +867,7 @@ const PRODUCTS = [
   {
     id:1, name:"NFC Logo Keychain", emoji:"🔑",
     tagline:"Tap to share your menu, specials, or socials.",
-    venues:["ramen","cafe","any","events"],
+    venues:["restaurants","events"],
     cost:0.72,
     desc:"Tap-enabled NFC keychain with your logo embedded. Perfect for table-side digital menus, loyalty programs, or social links. Each chip is pre-programmed to your URL.",
     note:"+$25 design fee · NFC chip included",
@@ -861,7 +876,7 @@ const PRODUCTS = [
   {
     id:2, name:"Dumpling Clicker", emoji:"🥟",
     tagline:"Bao bun click-top in a woven bamboo steamer. Guests won't stop.",
-    venues:["ramen","any","events"],
+    venues:["restaurants","events"],
     cost:1.05,
     desc:"A satisfying click-top bao bun — woven bamboo steamer base with a fluffy bun on top. Guests won't stop clicking it. The most talked-about takeaway gift for any Asian restaurant.",
     note:"Also available as a keychain",
@@ -870,7 +885,7 @@ const PRODUCTS = [
   {
     id:3, name:"Kawaii Sushi Clickers", emoji:"🍣",
     tagline:"Cute sushi clickers with kawaii faces. Nigiri or onigiri.",
-    venues:["ramen","events"],
+    venues:["restaurants"],
     cost:0.99,
     desc:"Adorable chibi-style sushi clickers with smooth satisfying action. Available as nigiri or onigiri — cute kawaii faces make them instantly lovable. Perfect for gift bags, counter merch, or a full sushi-themed set.",
     note:"Available as nigiri or onigiri",
@@ -879,7 +894,7 @@ const PRODUCTS = [
   {
     id:4, name:"Realistic Sushi Clickers", emoji:"🐟",
     tagline:"Realistic salmon and shrimp nigiri clickers. Almost too good to eat.",
-    venues:["ramen","events"],
+    venues:["restaurants"],
     cost:1.04,
     desc:"Hyper-detailed nigiri clickers that look almost good enough to eat. Salmon is painted in realistic orange tones with visible grain texture. Shrimp has delicate translucent pink curves. Collectors and sushi lovers go wild for these.",
     note:"Available as salmon or shrimp nigiri",
@@ -888,7 +903,7 @@ const PRODUCTS = [
   {
     id:5, name:"Soy Sauce Fish Clicker", emoji:"🐠",
     tagline:"The soy sauce fish everyone knows — now a satisfying fidget clicker.",
-    venues:["ramen","events"],
+    venues:["restautants"],
     cost:0.99,
     desc:"The classic soy sauce fish bottle everyone knows from their takeout bag — reimagined as a satisfying fidget clicker. Available in black and white. Iconic silhouette, instant recognition.",
     note:"Available in black + white",
@@ -897,7 +912,7 @@ const PRODUCTS = [
   {
     id:6, name:"Boba Clicker", emoji:"🧋",
     tagline:"Chunky boba cup clicker. Pearl details, dome click, deep purple.",
-    venues:["cafe","events"],
+    venues:["restaurants"],
     cost:0.85,
     desc:"Chunky boba cup clicker with pearl details and a satisfying dome click. The boba community loves these — great for tea shops, bubble tea events, and anyone who takes their boba seriously.",
     note:"Purple colorway",
@@ -906,7 +921,7 @@ const PRODUCTS = [
   {
     id:7, name:"Kawaii Ramen Bowl Keychain", emoji:"🍜",
     tagline:"Kawaii ramen bowl bag charm. The perfect grand opening giveaway.",
-    venues:["ramen","any"],
+    venues:["restaurants","events"],
     cost:0.45,
     desc:"Miniature ramen bowl keychain with an adorable kawaii face. Lightweight, durable, and instantly recognizable — the perfect bag charm or grand opening giveaway that guests actually keep.",
     note:"",
@@ -915,7 +930,7 @@ const PRODUCTS = [
   {
     id:8, name:"B&W Ramen Bowl Keychain", emoji:"🍥",
     tagline:"Bold black-and-white ramen bowl. Minimal, modern, fits any brand.",
-    venues:["ramen","any"],
+    venues:["restaurants"],
     cost:0.45,
     desc:"Clean black-and-white ramen bowl keychain with bold linework. Minimal and modern — pairs with any brand palette without competing. A subtle nod to the craft.",
     note:"",
@@ -924,7 +939,7 @@ const PRODUCTS = [
   {
     id:9, name:"Naruto Ramen Keychain", emoji:"🌀",
     tagline:"Naruto swirl fishcake keychain. Anime fans will lose their minds.",
-    venues:["ramen","events"],
+    venues:["restaurants","events"],
     cost:0.45,
     desc:"Inspired by the legendary Ichiraku ramen — featuring the iconic naruto swirl fishcake topping. A fan favorite that connects instantly with anime-loving diners and makes any ramen shop feel like the real deal.",
     note:"",
@@ -933,7 +948,7 @@ const PRODUCTS = [
   {
     id:10, name:"Boba Jar Keychain", emoji:"🫙",
     tagline:"Tiny boba mason jar. More detail than you'd believe at this size.",
-    venues:["cafe","events"],
+    venues:["restaurants","events"],
     cost:0.31,
     desc:"Tiny mason jar packed with boba pearls, rendered in translucent purple. Incredibly detailed at this scale. A great low-cost add-on for gift bundles or grab-and-go merch at the counter.",
     note:"Purple colorway",
@@ -942,7 +957,7 @@ const PRODUCTS = [
   {
     id:11, name:"Kawaii Boba Cup Keychain", emoji:"🥤",
     tagline:"The boba cup everyone recognizes. Kawaii style, instant charm.",
-    venues:["cafe","events",],
+    venues:["restaurants","events",],
     cost:0.31,
     desc:"The iconic plastic boba cup with straw — kawaii style. High charm, low cost, instant recognition. One of the most requested keychains we make. Hard to say no to.",
     note:"Red/silver colorway",
@@ -951,7 +966,7 @@ const PRODUCTS = [
   {
     id:12, name:"Kewpie Mayo Chopstick Rest", emoji:"🧴",
     tagline:"Kewpie mayo chopstick rest. Sets the table with personality.",
-    venues:["ramen","any"],
+    venues:["restaurants"],
     cost:0.27,
     desc:"The Kewpie mayo bottle everyone loves, shrunk down into a chopstick rest. Instantly recognizable on any Asian fusion table. Sets of 4-6 make a great gift bundle or tableware upgrade.",
     note:"",
@@ -960,7 +975,7 @@ const PRODUCTS = [
   {
     id:13, name:"Soy Sauce Chopstick Rest", emoji:"🫗",
     tagline:"Soy sauce bottle chopstick rest. Playful detail, functional design.",
-    venues:["ramen","any"],
+    venues:["restaurants"],
     cost:0.27,
     desc:"Miniature soy sauce bottle reimagined as a chopstick rest. Classic, playful, and functional — elevates any Asian restaurant table with a detail guests notice and remember.",
     note:"",
@@ -969,7 +984,7 @@ const PRODUCTS = [
   {
     id:14, name:"Wavy Noodle Chopstick Rest", emoji:"〰️",
     tagline:"Sculptural noodle wave chopstick rest. Red + black available.",
-    venues:["ramen","any"],
+    venues:["restaurants"],
     cost:0.29,
     desc:"Abstract wavy noodle form that doubles as a sculptural chopstick rest. Looks like it belongs in a design museum, works perfectly on a dinner table. Available in red and black.",
     note:"Red + black available",
@@ -978,7 +993,7 @@ const PRODUCTS = [
   {
     id:15, name:"Articulated Fish Chopstick Rest", emoji:"🐡",
     tagline:"Fully articulated fish that wiggles. Guests always pick it up.",
-    venues:["ramen","any"],
+    venues:["restaurants"],
     cost:0.29,
     desc:"Segmented, fully articulated fish that lays flat as a chopstick rest — but wiggles when touched. Guests always pick it up. Conversation at the table is guaranteed.",
     note:"",
@@ -987,7 +1002,7 @@ const PRODUCTS = [
   {
     id:16, name:"Custom Character Clicker", emoji:"🎭",
     tagline:"Your mascot as a clicker. Completely bespoke, one of a kind.",
-    venues:["ramen","cafe","any","events"],
+    venues:["restaurants","events"],
     cost:1.05,
     desc:"Your restaurant mascot or character modeled and turned into a click mechanism. Completely bespoke — we design it and print it. One-of-a-kind branded merch that nobody else has.",
     note:"+$25 design fee for custom character",
@@ -996,7 +1011,7 @@ const PRODUCTS = [
   {
     id:18, name:"Taiyaki Ice Cream Clicker", emoji:"🐡",
     tagline:"Fish-shaped taiyaki with ice cream on top. Too cute to put down.",
-    venues:["ramen","cafe","events"],
+    venues:["restaurants"],
     cost:0.87,
     t1:"2.50", t2:"2.00", t3:"1.75",
     desc:"A taiyaki fish cone with a swirl of ice cream on top — reimagined as a satisfying fidget clicker. One of our most instantly lovable designs. Perfect for any Asian café or dessert spot.",
@@ -1006,7 +1021,7 @@ const PRODUCTS = [
   {
     id:19, name:"Matcha Bowl Clickers", emoji:"🍵",
     tagline:"Aesthetic matcha bowl clicker. Plain or with a little whisk on top.",
-    venues:["cafe","events"],
+    venues:["restaurants"],
     cost:0.91,
     t1:"2.75", t2:"2.25", t3:"1.85",
     desc:"A beautifully detailed matcha bowl with delicious fill — available plain or with a miniature whisk resting on top. Both click satisfyingly. The most aesthetic thing on any café counter.",
@@ -1014,9 +1029,9 @@ const PRODUCTS = [
     photos:["images/matcha-bowl-1.jpg","images/matcha-bowl-2.jpg","images/matcha-bowl-3.jpg","images/matcha-bowl-4.jpg"]
   },
   {
-    id:20, name:"Matcha Whisk Keychain", emoji:"🍃",
+    id:20, name:"Matcha Whisk harm Keychain", emoji:"🍃",
     tagline:"Tiny matcha whisk keychain. Instant recognition for any matcha lover.",
-    venues:["cafe","events"],
+    venues:["restautants","events"],
     cost:0.39,
     t1:"1.25", t2:"1.00", t3:"0.80",
     desc:"A miniature matcha whisk rendered in stunning detail — green bristles, bamboo handle, the whole thing. Lightweight keychain that any matcha lover will recognize immediately. Great counter merch for cafés.",
@@ -1026,7 +1041,7 @@ const PRODUCTS = [
   {
     id:17, name:"Miami Icons Keychain", emoji:"🌴",
     tagline:"Miami landmarks on a keychain. Local pride, carried everywhere.",
-    venues:["any","events"],
+    venues:["events"],
     cost:0.45,
     desc:"A flat circle keychain featuring iconic Miami imagery — Art Deco hotels, palm trees, the skyline, or custom local landmarks. The first piece in our Miami Icons collection. Available with NFC chip on request.",
     note:"NFC version available · Custom image on request",
@@ -1051,12 +1066,8 @@ const PRODUCTS = [
 //   Product: venues:["ramen","italian"]
 // =============================================================
 const VENUE_META = {
-  ramen:  { cls:"vd-ramen",  label:"🍜 Ramen / Asian" },
-  cafe:   { cls:"vd-cafe",   label:"☕ Café / Boba"   },
-  any:    { cls:"vd-any",    label:"🍽️ Any Restaurant" },
-  events: { cls:"vd-events", label:"🎉 Events"         }
-  // italian: { cls:"vd-italian", label:"🍕 Italian" }
-  // coffee:  { cls:"vd-coffee",  label:"☕ Coffee Shop" }
+  restaurants: { cls:"vd-restaurants", label:"🍽️ Restaurants & Cafés" },
+  events:      { cls:"vd-events",      label:"🎉 Conferences & Events" }
 };
 
 function prices(cost) {
@@ -1205,18 +1216,9 @@ const thumbsHTML = hasMedia
     <div class="panel-venues"><span class="panel-venues-text">${venuesText}</span></div>
     <p class="panel-desc">${p.desc}</p>
     <div class="ptable">
-      <div class="ptable-row">
-        <span class="ptable-row-label">1–25 units</span>
-        <span class="ptable-row-price">$${pr.t1} ea</span>
-      </div>
-      <div class="ptable-row">
-        <span class="ptable-row-label">25–50 units</span>
-        <span class="ptable-row-price">$${pr.t2} ea</span>
-      </div>
-      <div class="ptable-row best-row">
-        <span class="ptable-row-label">50+ units <span class="best-badge">✦ best value</span></span>
-        <span class="ptable-row-price">$${pr.t3} ea</span>
-      </div>
+     <div class="ptable-simple">
+  From <strong>$${pr.t3}</strong> · Pricing improves <em>significantly</em> with bulk orders · Final price varies by design and customization
+</div>
     </div>
     ${designFee}${otherNote}
     <button class="panel-cta" onclick="inquire('${p.name}')">Inquire About This Item</button>`;
@@ -1257,6 +1259,13 @@ function inquire(name) {
   }, 350);
 }
 
+// Filtered URL support — printfailrepeat.com?filter=restaurants or ?filter=events
+const urlParams = new URLSearchParams(window.location.search);
+const preFilter = urlParams.get('filter');
+if (preFilter) {
+  const btn = document.querySelector(`[data-filter="${preFilter}"]`);
+  if (btn) doFilter(preFilter, btn);
+}
 buildCards();
 </script>
 </body>
