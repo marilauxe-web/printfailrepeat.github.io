@@ -792,7 +792,7 @@ footer strong { font-family: 'Syne', sans-serif; font-weight: 800; color: rgba(2
       </div>
       <div class="form-group">
         <label class="form-label">Message</label>
-        <textarea class="form-textarea" name="message" placeholder="Tell us about your event, party, or business — dates, quantities, ideas, anything. We'll take it from there.></textarea>
+        <textarea class="form-textarea" name="message" placeholder="Tell us about your event, party, or business — dates, quantities, ideas, anything. We'll take it from there."></textarea>
       </div>
       <button class="form-submit" onclick="submitForm(event)">Send Message →</button>
       <div class="form-success" id="formSuccess">
@@ -1143,11 +1143,11 @@ function buildCards() {
   const grid = document.getElementById('grid');
   const nr = document.getElementById('noResults');
   PRODUCTS.forEach(p => {
-const hasPhoto = p.photos && p.photos.length > 0;
-const imgHTML = hasPhoto
-  ? `<img src="${p.photos[0]}" alt="${p.name}" loading="lazy">`
-  : `<span class="ph">${p.emoji}</span>`;
-const dotsHTML = p.venues.map(v =>
+    const hasPhoto = p.photos && p.photos.length > 0;
+    const imgHTML = hasPhoto
+      ? `<img src="${p.photos[0]}" alt="${p.name}" loading="lazy">`
+      : `<span class="ph">${p.emoji}</span>`;
+    const dotsHTML = p.venues.map(v =>
       `<span class="venue-dot ${VENUE_META[v].cls}" title="${VENUE_META[v].label}"></span>`
     ).join('');
     const card = document.createElement('div');
