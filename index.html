@@ -836,7 +836,7 @@ footer strong { font-family: 'Syne', sans-serif; font-weight: 800; color: rgba(2
 // -------------------------
 // Copy any existing product block below (from { to },)
 // Paste it at the end of the list (before the ];)
-// Change: id (next number), name, emoji, venues, cost, desc, note, photos
+// Change: id (next number), name, emoji, venues, price, desc, note, photos
 // Save, commit in GitHub Desktop, push — live in 60 seconds.
 //
 //
@@ -847,6 +847,7 @@ const PRODUCTS = [
     id:1, name:"NFC Logo Keychain", emoji:"🔑",
     tagline:"Tap to share your menu, specials, or socials.",
     venues:["restaurants","events"],
+    price: "5.00"
     desc:"Tap-enabled NFC keychain with your logo embedded. Perfect for table-side digital menus, loyalty programs, or social links. Each chip is pre-programmed to your URL.",
     note:"for orders <25 a design fee is added · NFC chip included",
     photos:["images/nfc-demo.gif","images/nfc-keychain-1.jpg","images/nfc-keychain-2.jpg","images/nfc-keychain-3.jpg","images/nfc-keychain-4.jpg"]
@@ -891,6 +892,7 @@ const PRODUCTS = [
     id:6, name:"Boba Clicker", emoji:"🧋",
     tagline:"Chunky boba cup clicker. Pearl details, dome click, deep purple.",
     venues:["restaurants"],
+    price:"5.00"
     desc:"Chunky boba cup clicker with pearl details and a satisfying dome click. The boba community loves these — great for tea shops, bubble tea events, and anyone who takes their boba seriously.",
     note:"Available in multiple colors",
     photos:["images/boba-clicker-1.jpg","images/boba-clicker-2.jpg"]
@@ -899,6 +901,7 @@ const PRODUCTS = [
     id:7, name:"Kawaii Ramen Bowl Keychain", emoji:"🍜",
     tagline:"Kawaii ramen bowl bag charm. The perfect grand opening giveaway.",
     venues:["restaurants","events"],
+    price:"4.00"
     desc:"Miniature ramen bowl keychain with an adorable kawaii face. Lightweight, durable, and instantly recognizable — the perfect bag charm or grand opening giveaway that guests actually keep.",
     note:"",
     photos:["images/ramen-bowl-kawaii-1.jpg","images/ramen-bowl-kawaii-2.jpg","images/ramen-bowl-kawaii-3.jpg","images/ramen-bowl-kawaii-4.jpg"]
@@ -907,6 +910,7 @@ const PRODUCTS = [
     id:8, name:"B&W Ramen Bowl Keychain", emoji:"🍥",
     tagline:"Bold black-and-white ramen bowl. Minimal, modern, fits any brand.",
     venues:["restaurants"],
+    price: "4.00"
     desc:"Clean black-and-white ramen bowl keychain with bold linework. Minimal and modern — pairs with any brand palette without competing. A subtle nod to the craft.",
     note:"",
     photos:["images/ramen-bowl-bw-1.jpg","images/ramen-bowl-bw-2.jpg","images/ramen-bowl-bw-3.jpg"]
@@ -924,7 +928,7 @@ const PRODUCTS = [
     id:10, name:"Boba Jar Keychain", emoji:"🫙",
     tagline:"Tiny boba mason jar. More detail than you'd believe at this size.",
     venues:["restaurants","events"],
-    cost:0.31,
+    price:"4.00",
     desc:"Tiny mason jar packed with boba pearls, rendered in translucent purple. Incredibly detailed at this scale. A great low-cost add-on for gift bundles or grab-and-go merch at the counter.",
     note:"Available in multiple colors",
     photos:["images/boba-jar-1.jpg","images/boba-jar-2.jpg"]
@@ -1060,7 +1064,7 @@ const FIXED_PRICES = {
 };
 
 function getPrice(p) {
-  return p.price || FIXED_PRICES[p.id] || (p.cost * 3).toFixed(2);
+  return p.price;
 }
 
 async function submitForm(e) {
@@ -1179,11 +1183,7 @@ const thumbsHTML = hasMedia
     }).join('')
   : `<div class="thumb active">${p.emoji}</div>`;
 
-  // Dot-separated venue labels in red caps
-  const venueLabels = {
-    ramen:'Ramen / Asian', cafe:'Café / Boba', any:'Any Restaurant', events:'Events'
-  };
-  const venuesText = p.venues.map(v => venueLabels[v]).join(' · ');
+  const venuesText = p.venues.map(v => VENUE_META[v]?.label || v).join(' · ');
 
   const designFee = p.note?.includes('$25')
     ? `<p class="ptable-note">⭐ <strong>+$25 one-time design fee</strong> for custom artwork.</p>` : '';
