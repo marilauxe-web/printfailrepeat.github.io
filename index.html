@@ -207,8 +207,9 @@ nav {
 }
 .filter-pill:hover { border-color: var(--ink); color: var(--ink); }
 .filter-pill.active { background: var(--ink); border-color: var(--ink); color: white; }
-.filter-pill.active.f-restaurants { background: var(--pop-red);  border-color: var(--pop-red); }
-.filter-pill.active.f-events      { background: var(--pop-teal); border-color: var(--pop-teal); }
+.filter-pill.active.f-swag     { background: var(--pop-blue);  border-color: var(--pop-blue); }
+.filter-pill.active.f-personal  { background: var(--pop-pink);  border-color: var(--pop-pink); }
+.filter-pill.active.f-business  { background: var(--pop-teal);  border-color: var(--pop-teal); }
 
 .showing-label {
   font-family: 'DM Sans', sans-serif;
@@ -270,8 +271,9 @@ nav {
   width: 7px; height: 7px;
   border-radius: 50%;
 }
-.vd-restaurants { background: var(--pop-red); }
-.vd-events      { background: var(--pop-teal); }
+.vd-swag     { background: var(--pop-blue); }
+.vd-personal  { background: var(--pop-pink); }
+.vd-business  { background: var(--pop-teal); }
 
 .card-body {
   padding: 10px 18px 18px;
@@ -734,8 +736,9 @@ footer strong { font-family: 'Syne', sans-serif; font-weight: 800; color: rgba(2
   <p class="filter-label">Filter</p>
 <div class="filter-bar">
   <button class="filter-pill active" data-filter="all" onclick="doFilter('all',this)">All</button>
-  <button class="filter-pill f-restaurants" data-filter="restaurants" onclick="doFilter('restaurants',this)">🍽️ Restaurants & Cafés</button>
-  <button class="filter-pill f-events" data-filter="events" onclick="doFilter('events',this)">🎉 Conferences & Events</button>
+  <button class="filter-pill f-swag" data-filter="swag" onclick="doFilter('swag',this)">🎪 Swag & Conferences</button>
+  <button class="filter-pill f-personal" data-filter="personal" onclick="doFilter('personal',this)">🎉 Personal Events</button>
+  <button class="filter-pill f-business" data-filter="business" onclick="doFilter('business',this)">🏢 Business & Brand</button>
 </div>
   <p class="showing-label" id="showLabel">Showing <strong>all 17 products</strong></p>
   <div class="product-grid" id="grid">
@@ -786,7 +789,9 @@ footer strong { font-family: 'Syne', sans-serif; font-weight: 800; color: rgba(2
           <option>Keychains</option>
           <option>Custom Character Clicker</option>
           <option>Something not in the catalog</option>
-          <option>Full event / grand opening package</option>
+          <option>Conference or trade show swag</option>
+          <option>Birthday party or personal event</option>
+          <option>Grand opening or branded merch</option>
           <option>Just browsing, have questions</option>
         </select>
       </div>
@@ -846,7 +851,7 @@ const PRODUCTS = [
   {
     id:1, name:"NFC Logo Keychain", emoji:"🔑",
     tagline:"Tap to share your menu, specials, or socials.",
-    venues:["restaurants","events"],
+    venues:["swag","personal","business"],
     price:"5.00",
     desc:"Tap-enabled NFC keychain with your logo embedded. Perfect for table-side digital menus, loyalty programs, or social links. Each chip is pre-programmed to your URL.",
     note:"Design fee added for orders under 25 · NFC chip included",
@@ -855,16 +860,17 @@ const PRODUCTS = [
   {
     id:23, name:"Custom Name Keychain", emoji:"✨",
     tagline:"Script-style name keychain in two colors. Our most personal piece.",
-    venues:["events"],
+    venues:["personal"],
     price:"5.00",
     desc:"A custom script-style keychain with any name, printed in two colors. Our most versatile events product — perfect for birthday parties, conferences, graduations, and any gathering where every guest deserves something made just for them.",
     note:"Personalized with name · Two color print · Price may vary with quantity",
-    photos:["images/name-keychain-1.jpg","images/name-keychain-2.jpg"]
+    photos:[]
+    // photos:["images/name-keychain-1.jpg","images/name-keychain-2.jpg"]
   },
   {
     id:2, name:"Dumpling Clicker", emoji:"🥟",
     tagline:"Bao bun click-top in a woven bamboo steamer. Guests won't stop.",
-    venues:["restaurants","events"],
+    venues:["personal"],
     price:"6.50",
     desc:"A satisfying click-top bao bun — woven bamboo steamer base with a fluffy bun on top. Guests won't stop clicking it. The most talked-about takeaway gift for any Asian restaurant.",
     note:"Also available as a keychain",
@@ -873,7 +879,7 @@ const PRODUCTS = [
   {
     id:16, name:"Custom Character Clicker", emoji:"🎭",
     tagline:"Your mascot as a clicker. Completely bespoke, one of a kind.",
-    venues:["restaurants","events"],
+    venues:["swag","personal","business"],
     price:"8.00",
     desc:"Your restaurant mascot or character modeled and turned into a click mechanism. Completely bespoke — we design it and print it. One-of-a-kind branded merch that nobody else has.",
     note:"Design fee added for orders under 25",
@@ -882,7 +888,7 @@ const PRODUCTS = [
   {
     id:21, name:"Tennis Racket Keychain", emoji:"🎾",
     tagline:"Personalized with any name. Perfect for birthdays and sports events.",
-    venues:["events"],
+    venues:["personal"],
     price:"6.00",
     desc:"A miniature tennis racket keychain personalized with any name. Perfect party favor for tennis birthdays, club events, or sports conferences. Every guest gets one made just for them.",
     note:"Personalized with name · Price may vary with quantity",
@@ -892,7 +898,7 @@ const PRODUCTS = [
   {
     id:22, name:"Tennis Ball Clicker", emoji:"🎾",
     tagline:"Satisfying tennis ball click mechanism. Crowd pleaser every time.",
-    venues:["events"],
+    venues:["swag","personal","business"],
     price:"6.50",
     desc:"A realistic miniature tennis ball reimagined as a satisfying fidget clicker. Perfect for tennis-themed birthday parties, sports events, and anyone who can't resist clicking things.",
     note:"Available in multiple colors",
@@ -902,7 +908,7 @@ const PRODUCTS = [
   {
     id:3, name:"Sushi Clicker", emoji:"🍣",
     tagline:"Kawaii or realistic — both styles available as sushi clickers.",
-    venues:["restaurants"],
+    venues:["business"],
     price:"6.50",
     desc:"Two styles, one obsession. Choose the kawaii version — adorable chibi nigiri or onigiri with cute faces. Or go realistic — hyper-detailed salmon and shrimp nigiri that look almost good enough to eat. Both click satisfyingly.",
     note:"Available as kawaii (nigiri or onigiri) or realistic (salmon or shrimp)",
@@ -911,7 +917,7 @@ const PRODUCTS = [
   {
     id:5, name:"Soy Sauce Fish Clicker", emoji:"🐠",
     tagline:"The soy sauce fish everyone knows — now a satisfying fidget clicker.",
-    venues:["restaurants"],
+    venues:["business"],
     price:"6.50",
     desc:"The classic soy sauce fish bottle everyone knows from their takeout bag — reimagined as a satisfying fidget clicker. Available in multiple colors. Iconic silhouette, instant recognition.",
     note:"Available in multiple colors",
@@ -920,7 +926,7 @@ const PRODUCTS = [
   {
     id:18, name:"Taiyaki Ice Cream Clicker", emoji:"🍡",
     tagline:"Fish-shaped taiyaki with ice cream on top. Too cute to put down.",
-    venues:["restaurants","events"],
+    venues:["business"],
     price:"6.50",
     desc:"A taiyaki fish cone with a swirl of ice cream on top — reimagined as a satisfying fidget clicker. One of our most instantly lovable designs. Perfect for any Asian café or dessert spot.",
     note:"Available in multiple colors",
@@ -929,7 +935,7 @@ const PRODUCTS = [
   {
     id:19, name:"Matcha Bowl Clicker", emoji:"🍵",
     tagline:"Aesthetic matcha bowl clicker. Plain or with a little whisk on top.",
-    venues:["restaurants"],
+    venues:["business"],
     price:"6.50",
     desc:"A beautifully detailed matcha bowl with deep green fill — available plain or with a miniature whisk resting on top. Both click satisfyingly. The most aesthetic thing on any café counter.",
     note:"Available as plain bowl or bowl with whisk",
@@ -938,7 +944,7 @@ const PRODUCTS = [
   {
     id:6, name:"Boba Clicker & Keychains", emoji:"🧋",
     tagline:"Everything boba — clicker, jar keychain, or cup keychain.",
-    venues:["restaurants"],
+    venues:["business"],
     price:"4.00",
     desc:"Three boba pieces, one vibe. The chunky boba cup clicker with dome click and pearl details. The tiny mason jar keychain packed with boba pearls. The iconic plastic cup keychain in kawaii style. Pick one or mix and match.",
     note:"Available as clicker ($6.50) or keychain ($4.00) · Multiple colors",
@@ -947,7 +953,7 @@ const PRODUCTS = [
   {
     id:7, name:"Ramen Bowl Keychain", emoji:"🍜",
     tagline:"Three styles — kawaii, black & white, or Naruto fishcake.",
-    venues:["restaurants"],
+    venues:["business"],
     price:"4.00",
     desc:"Three ramen bowl keychains, each with its own personality. The kawaii version has an adorable face — perfect grand opening giveaway. The B&W version is minimal and modern. The Naruto version features the iconic fishcake topping — anime fans lose their minds.",
     note:"Available as kawaii, black & white, or Naruto style",
@@ -956,7 +962,7 @@ const PRODUCTS = [
   {
     id:20, name:"Matcha Whisk Charm Keychain", emoji:"🍃",
     tagline:"Tiny matcha whisk keychain. Instant recognition for any matcha lover.",
-    venues:["restaurants","events"],
+    venues:["business"],
     price:"3.50",
     desc:"A miniature matcha whisk rendered in stunning detail — green bristles, bamboo handle, the whole thing. Lightweight keychain that any matcha lover will recognize immediately. Great counter merch for cafés.",
     note:"Available in multiple colors",
@@ -965,7 +971,7 @@ const PRODUCTS = [
   {
     id:12, name:"Chopstick Rests", emoji:"🥢",
     tagline:"Four styles — Kewpie, soy sauce, wavy noodle, or articulated fish.",
-    venues:["restaurants"],
+    venues:["business"],
     price:"3.00",
     desc:"Playful chopstick rests that elevate any Asian restaurant table. Choose from Kewpie mayo bottle, soy sauce bottle, sculptural wavy noodle, or a fully articulated fish that wiggles when touched. All functional, all conversation starters.",
     note:"Available in 4 styles · Sets of 4-6 recommended",
@@ -990,8 +996,9 @@ const PRODUCTS = [
 //   Product: venues:["ramen","italian"]
 // =============================================================
 const VENUE_META = {
-  restaurants: { cls:"vd-restaurants", label:"🍽️ Restaurants & Cafés" },
-  events:      { cls:"vd-events",      label:"🎉 Conferences & Events" }
+  swag:     { cls:"vd-swag",     label:"🎪 Swag & Conferences" },
+  personal: { cls:"vd-personal", label:"🎉 Personal Events"    },
+  business: { cls:"vd-business", label:"🏢 Business & Brand"   }
 };
 
 // Price lookup — checks for hardcoded price first, else uses formula
@@ -1197,7 +1204,9 @@ function inquire(name) {
 
 // Filtered URL support — printfailrepeat.com?filter=restaurants or ?filter=events
 const urlParams = new URLSearchParams(window.location.search);
-const preFilter = urlParams.get('filter');
+// URL map: /conferences → swag, /events → personal, /business → business
+const pathFilter = {'/conferences':'swag', '/events':'personal', '/business':'business'}[window.location.pathname];
+const preFilter = pathFilter || urlParams.get('filter');
 if (preFilter) {
   const btn = document.querySelector(`[data-filter="${preFilter}"]`);
   if (btn) doFilter(preFilter, btn);
