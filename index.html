@@ -6,7 +6,6 @@
 <meta name="color-scheme" content="light">
 <title>PFR — Print Fail Repeat · Custom 3D Printed Merch</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-0TW996NZHW"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -18,19 +17,20 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
   color-scheme: light only;
-  --cream: #F5F0E8;
-  --cream-dark: #EDE7D9;
-  --ink: #1A1612;
-  --ink-soft: #5C5550;
-  --red: #E8412A;
-  --yellow: #F5C842;
-  --yellow-dark: #E2B320;
+  --lemon: #EBEAC1;
+  --lemon-dark: #E0DFB0;
+  --saffron: #EABB1F;
+  --saffron-dark: #D4A81A;
+  --terra: #F2542D;
+  --cyan: #2292A4;
+  --ink: #0F0A0A;
+  --ink-soft: #6B6560;
   --white: #FFFFFF;
 }
 html { scroll-behavior: smooth; }
 body {
   font-family: 'DM Sans', sans-serif;
-  background: var(--cream);
+  background: var(--lemon);
   color: var(--ink);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
@@ -38,17 +38,17 @@ body {
 
 /* NAV */
 nav {
-  background: var(--ink);
-  padding: 0 32px;
+  background: var(--lemon);
+  padding: 0 48px;
   position: sticky;
   top: 0;
   z-index: 100;
-  border-bottom: 3px solid var(--yellow);
+  border-bottom: 1px solid rgba(15,10,10,0.1);
 }
 .nav-inner {
   max-width: 1200px;
   margin: 0 auto;
-  height: 60px;
+  height: 56px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -56,649 +56,250 @@ nav {
 .nav-wordmark {
   font-family: 'Syne', sans-serif;
   font-weight: 800;
-  font-size: 22px;
-  color: var(--white);
-  letter-spacing: -0.5px;
+  font-size: 18px;
+  color: var(--ink);
+  letter-spacing: -0.3px;
+  text-decoration: none;
 }
-.nav-wordmark span { color: var(--yellow); }
-.nav-right {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-}
+.nav-wordmark span { color: var(--terra); }
+.nav-right { display: flex; align-items: center; gap: 32px; }
 .nav-right a {
   font-family: 'DM Sans', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 11px;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.5);
+  color: rgba(15,10,10,0.38);
   text-decoration: none;
   transition: color 0.2s;
 }
-.nav-right a:hover { color: var(--yellow); }
+.nav-right a:hover { color: var(--ink); }
 .nav-contact {
-  font-family: 'Syne', sans-serif;
-  font-weight: 700;
-  font-size: 11px;
-  letter-spacing: 1px;
-  padding: 8px 20px;
-  background: var(--yellow);
-  color: var(--ink);
-  text-decoration: none;
-  transition: background 0.15s;
+  font-family: 'Syne', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 10px !important;
+  padding: 8px 16px !important;
+  background: var(--ink) !important;
+  color: var(--lemon) !important;
+  letter-spacing: 0.5px !important;
+  opacity: 1 !important;
+  transition: background 0.15s !important;
 }
-.nav-contact:hover { background: var(--yellow-dark); }
+.nav-contact:hover { background: var(--terra) !important; color: var(--white) !important; }
 
 /* HERO */
-.hero {
-  background: var(--yellow);
-  padding: 64px 40px 56px;
-  border-bottom: 4px solid var(--ink);
-}
-.hero-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 48px;
-  align-items: center;
+.hero { background: var(--lemon); padding: 88px 48px 80px; }
+.hero-inner { max-width: 1200px; margin: 0 auto; }
+.hero-eyebrow {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(15,10,10,0.32);
+  margin-bottom: 20px;
 }
 .hero-headline {
   font-family: 'Syne', sans-serif;
   font-weight: 800;
-  font-size: clamp(48px, 7vw, 88px);
-  line-height: 0.92;
+  font-size: clamp(48px, 7.5vw, 96px);
+  line-height: 0.9;
   color: var(--ink);
-  letter-spacing: -2px;
+  letter-spacing: -3px;
+  text-transform: uppercase;
+  max-width: 860px;
 }
-.hero-headline .line-red {
-  color: var(--red);
-  display: block;
+.hero-headline .line-red { color: var(--terra); display: block; }
+.hero-rule { width: 44px; height: 3px; background: var(--saffron); margin: 32px 0; }
+.hero-bottom {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
 }
 .hero-sub {
-  margin-top: 20px;
   font-family: 'DM Sans', sans-serif;
   font-weight: 300;
   font-size: 14px;
-  line-height: 1.7;
-  color: rgba(26,22,18,0.6);
-  max-width: 420px;
+  line-height: 1.85;
+  color: rgba(15,10,10,0.48);
+  max-width: 400px;
 }
-.hero-stats {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  text-align: right;
-  flex-shrink: 0;
-}
-.hero-stat-block { text-align: right; }
-.hero-tag {
+.hero-cta {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: var(--ink);
+  color: var(--saffron);
+  text-decoration: none;
+  padding: 14px 28px;
   display: inline-block;
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
-  font-size: 10px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  background: var(--ink);
-  color: var(--yellow);
-  padding: 6px 14px;
-  margin-bottom: 8px;
-}
-.hero-stat {
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
-  font-size: 52px;
-  color: var(--ink);
-  line-height: 1;
-  display: block;
-  letter-spacing: -2px;
-}
-.hero-stat-label {
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 300;
-  font-size: 10px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: rgba(26,22,18,0.5);
-}
-
-/* SMART BANNER */
-.smart-banner {
-  background: var(--ink);
-  padding: 14px 40px;
-}
-.smart-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-}
-.smart-text {
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 300;
-  font-size: 13px;
-  color: rgba(245,240,232,0.6);
-  line-height: 1.5;
-}
-.smart-text strong { color: var(--cream); font-weight: 500; }
-.smart-chip {
-  background: var(--yellow);
-  color: var(--ink);
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
-  font-size: 10px;
-  letter-spacing: 1.5px;
-  padding: 6px 14px;
   flex-shrink: 0;
-  white-space: nowrap;
+  transition: background 0.15s;
 }
+.hero-cta:hover { background: var(--terra); color: var(--white); }
+
+/* MARQUEE */
+.marquee-band {
+  border-top: 1px solid rgba(15,10,10,0.1);
+  border-bottom: 1px solid rgba(15,10,10,0.1);
+  padding: 12px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  background: var(--lemon);
+}
+.marquee-track { display: inline-block; animation: marquee 55s linear infinite; }
+.marquee-band:hover .marquee-track { animation-play-state: paused; }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.marquee-item {
+  display: inline-block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(15,10,10,0.22);
+  margin: 0 18px;
+  font-weight: 300;
+}
+.marquee-item.terra { color: var(--terra); font-family: 'Syne', sans-serif; font-weight: 700; }
+.marquee-item.cyan  { color: var(--cyan);  font-family: 'Syne', sans-serif; font-weight: 700; }
 
 /* CATALOG */
-.catalog-section {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 48px 40px 100px;
-}
-.filter-label {
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 500;
-  font-size: 10px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-  margin-bottom: 12px;
-}
-.filter-bar {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-bottom: 36px;
-}
-.filter-pill {
+.catalog-section { max-width: 1200px; margin: 0 auto; padding: 72px 48px 100px; }
+.catalog-header { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 40px; }
+.catalog-title {
   font-family: 'Syne', sans-serif;
-  font-weight: 700;
-  font-size: 11px;
-  letter-spacing: 0.5px;
-  padding: 9px 20px;
-  border: 2px solid var(--ink);
-  background: transparent;
+  font-weight: 800;
+  font-size: 34px;
   color: var(--ink);
-  cursor: pointer;
-  transition: all 0.15s;
-  border-radius: 0;
+  letter-spacing: -1px;
   text-transform: uppercase;
 }
-.filter-pill:hover { background: var(--ink); color: var(--cream); }
-.filter-pill.active { background: var(--ink); color: var(--yellow); border-color: var(--ink); }
-.filter-pill.active.f-swag     { background: var(--red);    color: var(--white); border-color: var(--red); }
-.filter-pill.active.f-personal { background: var(--yellow); color: var(--ink);   border-color: var(--yellow); }
-.filter-pill.active.f-business { background: var(--ink);    color: var(--yellow); border-color: var(--ink); }
+.catalog-count { font-size: 12px; font-weight: 300; color: var(--ink-soft); }
 
-.showing-label {
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 300;
-  font-size: 13px;
-  color: var(--ink-soft);
-  margin-bottom: 28px;
-}
-.showing-label strong { font-weight: 700; color: var(--ink); }
-
-/* PRODUCT GRID */
+/* GRID */
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 2px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 14px;
 }
 
 /* CARD */
 .card {
-  background: var(--white);
+  background: #F5F3E0;
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  outline: 2px solid transparent;
-  transition: outline 0.15s, transform 0.2s ease;
+  border-radius: 3px;
+  border: 1px solid rgba(15,10,10,0.07);
+  transition: border-color 0.15s, transform 0.2s ease;
+  overflow: hidden;
 }
-.card:hover {
-  outline: 2px solid var(--ink);
-  transform: translateY(-4px);
-  z-index: 2;
-}
-.card.hidden { display: none; }
-
+.card:hover { border-color: var(--ink); transform: translateY(-3px); z-index: 2; }
 .card-img {
   width: 100%;
   aspect-ratio: 1;
-  background: var(--cream);
+  background: #E8E6B0;
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
 }
-.card-img img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.35s ease;
-}
-.card:hover .card-img img { transform: scale(1.05); }
-.card-img .ph { font-size: 48px; opacity: 0.25; }
-
-.card-venue-dots {
-  display: flex;
-  gap: 4px;
-  padding: 10px 14px 0;
-}
-.venue-dot {
-  width: 6px; height: 6px;
-  border-radius: 50%;
-}
-.vd-swag     { background: var(--red); }
-.vd-personal { background: var(--yellow-dark); }
-.vd-business { background: var(--ink); }
-
-.card-body {
-  padding: 10px 14px 16px;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  border-top: 2px solid var(--cream);
-}
-.card-name {
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
-  font-size: 13.5px;
-  line-height: 1.2;
-  color: var(--ink);
-  margin-bottom: 5px;
-  text-transform: uppercase;
-  letter-spacing: 0.3px;
-}
-.card-tagline {
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 300;
-  font-size: 12px;
-  line-height: 1.5;
-  color: var(--ink-soft);
-  flex: 1;
-  margin-bottom: 12px;
-}
-.card-divider {
-  height: 1px;
-  background: var(--cream-dark);
-  margin-bottom: 12px;
-}
-.card-footer-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.card-from {
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
-  font-size: 15px;
-  color: var(--ink);
-}
-.card-from span {
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 300;
-  font-size: 10px;
-  color: var(--ink-soft);
-  margin-right: 3px;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-}
+.card-img img { width:100%; height:100%; object-fit:cover; display:block; transition: transform 0.35s ease; }
+.card:hover .card-img img { transform: scale(1.04); }
+.card-img .ph { font-size: 40px; opacity: 0.2; }
+.card-body { padding: 12px 14px 16px; flex:1; display:flex; flex-direction:column; }
+.card-name { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 13px; color: var(--ink); margin-bottom: 5px; line-height: 1.2; }
+.card-tagline { font-family: 'DM Sans', sans-serif; font-weight: 300; font-size: 12px; line-height: 1.5; color: var(--ink-soft); flex:1; margin-bottom: 14px; }
+.card-footer-row { display:flex; align-items:center; justify-content:space-between; border-top: 1px solid rgba(15,10,10,0.08); padding-top: 10px; }
+.card-from { font-family: 'DM Sans', sans-serif; font-weight: 500; font-size: 14px; color: var(--ink); }
+.card-from span { font-weight:300; font-size:10px; color:var(--ink-soft); margin-right:2px; text-transform:uppercase; letter-spacing:0.5px; }
 .card-btn {
-  background: var(--yellow);
+  background: transparent;
   color: var(--ink);
-  border: none;
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
-  font-size: 10px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  padding: 7px 14px;
-  cursor: pointer;
-  transition: background 0.15s;
-}
-.card-btn:hover { background: var(--red); color: var(--white); }
-
-/* NO RESULTS */
-.no-results {
-  display: none;
-  grid-column: 1/-1;
-  text-align: center;
-  padding: 80px 20px;
-}
-.no-results.show { display: block; }
-.no-results-headline {
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
-  font-size: 24px;
-  text-transform: uppercase;
-  letter-spacing: -0.3px;
-  color: var(--ink);
-  margin-bottom: 8px;
-}
-.no-results-sub {
+  border: 1px solid rgba(15,10,10,0.18);
   font-family: 'DM Sans', sans-serif;
-  font-weight: 300;
-  font-size: 14px;
-  color: var(--ink-soft);
-  margin-bottom: 24px;
+  font-weight: 400;
+  font-size: 11px;
+  padding: 5px 12px;
+  cursor: pointer;
+  border-radius: 100px;
+  transition: all 0.15s;
 }
+.card-btn:hover { background: var(--ink); color: var(--saffron); border-color: var(--ink); }
 
 /* OVERLAY + PANEL */
-.overlay {
-  position: fixed; inset: 0;
-  background: rgba(26,22,18,0.6);
-  z-index: 200;
-  opacity: 0; pointer-events: none;
-  transition: opacity 0.25s;
-  backdrop-filter: blur(2px);
-}
-.overlay.active { opacity: 1; pointer-events: all; }
-.panel {
-  position: fixed;
-  bottom: 0; left: 0; right: 0;
-  max-height: 92vh;
-  background: var(--white);
-  z-index: 300;
-  transform: translateY(100%);
-  transition: transform 0.32s cubic-bezier(0.32,0.72,0,1);
-  overflow-y: auto;
-  border-top: 4px solid var(--yellow);
-}
-.panel.active { transform: translateY(0); }
-.panel-handle {
-  width: 36px; height: 3px;
-  background: var(--cream-dark);
-  margin: 12px auto 0;
-}
-.panel-inner {
-  padding: 16px 24px 48px;
-  max-width: 680px;
-  margin: 0 auto;
-}
-.panel-toprow {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 12px;
-  margin-bottom: 16px;
-}
-.panel-name {
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
-  font-size: 22px;
-  text-transform: uppercase;
-  letter-spacing: -0.3px;
-  color: var(--ink);
-  line-height: 1.1;
-}
-.panel-close {
-  width: 32px; height: 32px;
-  background: var(--ink);
-  color: var(--yellow);
-  border: none;
-  cursor: pointer;
-  font-size: 14px;
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
-  transition: background 0.15s;
-}
-.panel-close:hover { background: var(--red); color: var(--white); }
-.panel-main-img {
-  width: 100%; aspect-ratio: 4/3;
-  background: var(--cream);
-  overflow: hidden;
-  display: flex; align-items: center; justify-content: center;
-  margin-bottom: 10px;
-  border: 2px solid var(--cream-dark);
-}
-.panel-main-img img { width: 100%; height: 100%; object-fit: cover; }
-.panel-main-img .ph-lg { font-size: 72px; opacity: 0.2; }
-.panel-thumbs {
-  display: flex; gap: 6px;
-  margin-bottom: 18px;
-  overflow-x: auto;
-}
-.thumb {
-  width: 60px; height: 60px;
-  background: var(--cream);
-  flex-shrink: 0;
-  cursor: pointer;
-  border: 2px solid transparent;
-  overflow: hidden;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 20px;
-  transition: border-color 0.15s;
-}
-.thumb img { width: 100%; height: 100%; object-fit: cover; }
-.thumb.active { border-color: var(--yellow); }
-.panel-venues { margin-bottom: 10px; }
-.panel-venues-text {
-  font-family: 'Syne', sans-serif;
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--red);
-}
-.panel-desc {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 1.7;
-  color: var(--ink-soft);
-  margin-bottom: 22px;
-}
-.ptable-simple {
-  background: var(--yellow);
-  padding: 16px 20px;
-  margin-bottom: 16px;
-  border-left: 4px solid var(--ink);
-}
-.ptable-simple strong {
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
-  font-size: 22px;
-  color: var(--ink);
-  display: block;
-}
-.ptable-simple em { font-style: italic; color: var(--ink); }
-.ptable-simple-text {
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 300;
-  font-size: 13px;
-  color: rgba(26,22,18,0.65);
-  margin-top: 4px;
-}
-.ptable-note { font-size: 11px; color: var(--ink-soft); margin-bottom: 16px; line-height: 1.5; }
-.panel-cta {
-  width: 100%;
-  padding: 16px;
-  background: var(--ink);
-  color: var(--yellow);
-  border: none;
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
-  font-size: 14px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: background 0.15s;
-}
-.panel-cta:hover { background: var(--red); color: var(--white); }
+.overlay { position:fixed; inset:0; background:rgba(15,10,10,0.5); z-index:200; opacity:0; pointer-events:none; transition:opacity 0.25s; backdrop-filter:blur(3px); }
+.overlay.active { opacity:1; pointer-events:all; }
+.panel { position:fixed; bottom:0; left:0; right:0; max-height:92vh; background:var(--white); z-index:300; transform:translateY(100%); transition:transform 0.32s cubic-bezier(0.32,0.72,0,1); overflow-y:auto; border-top:3px solid var(--saffron); border-radius:12px 12px 0 0; }
+.panel.active { transform:translateY(0); }
+.panel-handle { width:32px; height:3px; background:var(--lemon-dark); margin:12px auto 0; border-radius:2px; }
+.panel-inner { padding:16px 28px 52px; max-width:680px; margin:0 auto; }
+.panel-toprow { display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-bottom:18px; }
+.panel-name { font-family:'Syne',sans-serif; font-weight:800; font-size:20px; color:var(--ink); line-height:1.1; }
+.panel-close { width:30px; height:30px; background:var(--lemon-dark); color:var(--ink); border:none; cursor:pointer; font-size:13px; display:flex; align-items:center; justify-content:center; flex-shrink:0; border-radius:50%; transition:background 0.15s; font-family:'Syne',sans-serif; font-weight:800; }
+.panel-close:hover { background:var(--ink); color:var(--saffron); }
+.panel-main-img { width:100%; aspect-ratio:4/3; background:var(--lemon); overflow:hidden; display:flex; align-items:center; justify-content:center; margin-bottom:10px; border-radius:6px; }
+.panel-main-img img { width:100%; height:100%; object-fit:cover; }
+.panel-main-img .ph-lg { font-size:72px; opacity:0.2; }
+.panel-thumbs { display:flex; gap:6px; margin-bottom:20px; overflow-x:auto; }
+.thumb { width:56px; height:56px; background:var(--lemon); flex-shrink:0; cursor:pointer; border:2px solid transparent; border-radius:4px; overflow:hidden; display:flex; align-items:center; justify-content:center; font-size:18px; transition:border-color 0.15s; }
+.thumb img { width:100%; height:100%; object-fit:cover; }
+.thumb.active { border-color:var(--saffron); }
+.panel-desc { font-family:'DM Sans',sans-serif; font-size:14px; font-weight:300; line-height:1.75; color:var(--ink-soft); margin-bottom:24px; }
+.ptable-simple { background:var(--lemon); padding:16px 20px; margin-bottom:16px; border-radius:4px; border-left:3px solid var(--saffron); font-family:'DM Sans',sans-serif; font-size:13px; font-weight:300; color:rgba(15,10,10,0.6); line-height:1.6; }
+.ptable-simple strong { font-family:'Syne',sans-serif; font-weight:800; font-size:20px; color:var(--ink); display:block; margin-bottom:4px; }
+.ptable-simple em { font-style:italic; }
+.ptable-note { font-size:11px; color:var(--ink-soft); margin-bottom:16px; line-height:1.5; }
+.panel-cta { width:100%; padding:14px; background:var(--ink); color:var(--saffron); border:none; font-family:'Syne',sans-serif; font-weight:800; font-size:13px; letter-spacing:1px; text-transform:uppercase; cursor:pointer; border-radius:2px; transition:background 0.15s; }
+.panel-cta:hover { background:var(--terra); color:var(--white); }
 
 /* CONTACT */
-.contact-section {
-  background: var(--ink);
-  padding: 80px 40px;
-  position: relative;
-  overflow: hidden;
-}
-.contact-section::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: repeating-linear-gradient(
-    -45deg,
-    transparent, transparent 12px,
-    rgba(245,240,232,0.02) 12px, rgba(245,240,232,0.02) 13px
-  );
-}
-.contact-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: start;
-  position: relative;
-}
-.contact-eyebrow {
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 500;
-  font-size: 10px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--yellow);
-  margin-bottom: 14px;
-}
-.contact-headline {
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
-  font-size: clamp(32px, 4vw, 52px);
-  line-height: 0.95;
-  letter-spacing: -1px;
-  text-transform: uppercase;
-  color: var(--cream);
-  margin-bottom: 16px;
-}
-.contact-headline em { font-style: normal; color: var(--yellow); display: block; }
-.contact-body {
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 300;
-  font-size: 14px;
-  line-height: 1.7;
-  color: rgba(245,240,232,0.5);
-  margin-bottom: 28px;
-}
-.contact-perks { display: flex; flex-direction: column; gap: 10px; }
-.contact-perk {
-  display: flex; align-items: center; gap: 12px;
-  font-family: 'DM Sans', sans-serif;
-  font-size: 13px; font-weight: 300;
-  color: rgba(245,240,232,0.6);
-}
-.contact-perk-dot {
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: var(--yellow);
-  flex-shrink: 0;
-}
-.contact-form {
-  background: var(--cream);
-  padding: 28px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-.form-group { display: flex; flex-direction: column; gap: 5px; }
-.form-label {
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 500;
-  font-size: 9px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
-.form-input, .form-select, .form-textarea {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 13px;
-  color: var(--ink);
-  background: var(--white);
-  border: 1.5px solid var(--cream-dark);
-  padding: 10px 12px;
-  outline: none;
-  border-radius: 0;
-  width: 100%;
-  appearance: none;
-  transition: border-color 0.15s;
-}
-.form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--ink); }
-.form-textarea { resize: vertical; min-height: 100px; line-height: 1.5; }
-.form-submit {
-  width: 100%;
-  padding: 14px;
-  background: var(--yellow);
-  color: var(--ink);
-  border: none;
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
-  font-size: 13px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: background 0.15s;
-}
-.form-submit:hover { background: var(--red); color: var(--white); }
-.form-success { display: none; text-align: center; padding: 20px 0; }
-.form-success-icon { font-size: 36px; margin-bottom: 10px; }
-.form-success-title {
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
-  font-size: 18px;
-  text-transform: uppercase;
-  color: var(--ink);
-  margin-bottom: 6px;
-}
-.form-success-body {
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 300;
-  font-size: 13px;
-  color: var(--ink-soft);
-}
+.contact-section { background:var(--ink); padding:96px 48px; }
+.contact-inner { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start; }
+.contact-eyebrow { font-family:'DM Sans',sans-serif; font-weight:400; font-size:10px; letter-spacing:3px; text-transform:uppercase; color:rgba(235,234,193,0.28); margin-bottom:16px; }
+.contact-headline { font-family:'Syne',sans-serif; font-weight:800; font-size:clamp(36px,4vw,52px); line-height:0.93; letter-spacing:-1.5px; text-transform:uppercase; color:var(--lemon); margin-bottom:20px; }
+.contact-headline em { font-style:normal; color:var(--cyan); display:block; }
+.contact-body { font-family:'DM Sans',sans-serif; font-weight:300; font-size:14px; line-height:1.75; color:rgba(235,234,193,0.35); margin-bottom:32px; }
+.contact-perks { display:flex; flex-direction:column; gap:10px; }
+.contact-perk { display:flex; align-items:center; gap:10px; font-family:'DM Sans',sans-serif; font-size:13px; font-weight:300; color:rgba(235,234,193,0.38); }
+.contact-perk-dot { width:4px; height:4px; border-radius:50%; background:var(--saffron); flex-shrink:0; }
+.contact-form { display:flex; flex-direction:column; gap:14px; }
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.form-group { display:flex; flex-direction:column; gap:5px; }
+.form-label { font-family:'DM Sans',sans-serif; font-weight:400; font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:rgba(235,234,193,0.28); }
+.form-input, .form-select, .form-textarea { font-family:'DM Sans',sans-serif; font-size:13px; color:var(--lemon); background:rgba(235,234,193,0.07); border:1px solid rgba(235,234,193,0.12); padding:10px 12px; outline:none; border-radius:2px; width:100%; appearance:none; transition:border-color 0.15s; }
+.form-input::placeholder, .form-textarea::placeholder { color:rgba(235,234,193,0.22); }
+.form-input:focus, .form-select:focus, .form-textarea:focus { border-color:var(--saffron); }
+.form-select option { background:var(--ink); color:var(--lemon); }
+.form-textarea { resize:vertical; min-height:96px; line-height:1.6; }
+.form-submit { width:100%; padding:13px; background:var(--cyan); color:var(--ink); border:none; font-family:'Syne',sans-serif; font-weight:800; font-size:12px; letter-spacing:1px; text-transform:uppercase; cursor:pointer; border-radius:2px; transition:background 0.15s; }
+.form-submit:hover { background:var(--saffron); }
+.form-success { display:none; text-align:center; padding:20px 0; }
+.form-success-icon { font-size:32px; margin-bottom:10px; }
+.form-success-title { font-family:'Syne',sans-serif; font-weight:800; font-size:18px; text-transform:uppercase; color:var(--lemon); margin-bottom:6px; }
+.form-success-body { font-family:'DM Sans',sans-serif; font-weight:300; font-size:13px; color:rgba(235,234,193,0.45); }
 
 /* FOOTER */
-footer {
-  background: var(--ink);
-  border-top: 3px solid var(--yellow);
-  padding: 24px 40px;
-  text-align: center;
-}
-footer p {
-  font-family: 'DM Sans', sans-serif;
-  font-weight: 300;
-  font-size: 11px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  color: rgba(245,240,232,0.3);
-}
-footer strong {
-  font-family: 'Syne', sans-serif;
-  font-weight: 800;
-  color: var(--yellow);
-}
+footer { background:var(--ink); border-top:1px solid rgba(235,234,193,0.06); padding:22px 48px; text-align:center; }
+footer p { font-family:'DM Sans',sans-serif; font-weight:300; font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:rgba(235,234,193,0.16); }
+footer strong { font-family:'Syne',sans-serif; font-weight:800; color:rgba(235,234,193,0.28); }
 
-@media (max-width: 600px) {
-  .product-grid { grid-template-columns: repeat(2,1fr); }
-  .hero-inner { grid-template-columns: 1fr; }
-  .hero-stats { flex-direction: row; justify-content: flex-start; gap: 32px; text-align: left; margin-top: 24px; }
-  .hero-stat-block { text-align: left; }
-  .contact-inner { grid-template-columns: 1fr; gap: 40px; }
-  .form-row { grid-template-columns: 1fr; }
-  .catalog-section { padding: 40px 20px 80px; }
-  nav { padding: 0 16px; }
-  .hero { padding: 48px 20px 40px; }
-  .smart-banner { padding: 14px 20px; }
+@media (max-width:600px) {
+  .product-grid { grid-template-columns:repeat(2,1fr); gap:10px; }
+  .hero-headline { letter-spacing:-2px; }
+  .hero-bottom { flex-direction:column; align-items:flex-start; gap:24px; }
+  .contact-inner { grid-template-columns:1fr; gap:48px; }
+  .form-row { grid-template-columns:1fr; }
+  .catalog-section { padding:48px 20px 80px; }
+  nav { padding:0 20px; }
+  .hero { padding:56px 20px 52px; }
+  .contact-section { padding:72px 20px; }
+  footer { padding:20px; }
+  .marquee-band { display:none; }
 }
 </style>
 </head>
@@ -706,11 +307,11 @@ footer strong {
 
 <nav>
   <div class="nav-inner">
-    <span class="nav-wordmark">PFR<span>.</span></span>
+    <a href="/" class="nav-wordmark">PFR<span>.</span></a>
     <div class="nav-right">
       <a href="/">Home</a>
       <a href="/rami">Rami</a>
-      <a href="https://colduprint.com" target="_blank">Col du Print ↗</a>
+      <a href="https://colduprint.com" target="_blank">Col du Print</a>
       <a href="#contact" class="nav-contact">Contact</a>
     </div>
   </div>
@@ -718,50 +319,46 @@ footer strong {
 
 <div class="hero">
   <div class="hero-inner">
-    <div>
-      <h1 class="hero-headline">
-        We turn your<br>event into
-        <span class="line-red">something<br>people keep.</span>
-      </h1>
-      <p class="hero-sub">Custom 3D printed swag for events, parties, and businesses. Personalized, memorable, and actually worth keeping.</p>
-    </div>
-    <div class="hero-stats">
-      <div class="hero-stat-block">
-        <div class="hero-tag">Ready to order</div>
-        <span class="hero-stat">14</span>
-        <span class="hero-stat-label">Ready-made designs</span>
-      </div>
-      <div class="hero-stat-block" style="margin-top:8px;">
-        <span class="hero-stat" style="color:var(--red);">∞</span>
-        <span class="hero-stat-label">Custom options</span>
-      </div>
+    <p class="hero-eyebrow">Miami &middot; Custom 3D Printing Studio</p>
+    <h1 class="hero-headline">
+      We turn your<br>event into
+      <span class="line-red">something<br>people keep.</span>
+    </h1>
+    <div class="hero-rule"></div>
+    <div class="hero-bottom">
+      <p class="hero-sub">Ready-made designs, infinite custom options. 3D printed swag for events, parties, and businesses &mdash; personalized, memorable, and actually worth keeping.</p>
+      <a href="#contact" class="hero-cta">Start a project &rarr;</a>
     </div>
   </div>
 </div>
 
-<div class="smart-banner">
-  <div class="smart-inner">
-    <p class="smart-text"><strong>Ready-made designs, custom to order.</strong> Filter by occasion — swag for conferences, pieces for personal events, or branded merch for your business.</p>
-    <span class="smart-chip">⚡ SMART</span>
+<div class="marquee-band">
+  <div class="marquee-track">
+    <span class="marquee-item terra">Custom 3D Printing</span><span class="marquee-item">&middot;</span>
+    <span class="marquee-item">Events &amp; Conferences</span><span class="marquee-item">&middot;</span>
+    <span class="marquee-item cyan">Miami Made</span><span class="marquee-item">&middot;</span>
+    <span class="marquee-item">No Minimums</span><span class="marquee-item">&middot;</span>
+    <span class="marquee-item terra">Clickers &amp; Keychains</span><span class="marquee-item">&middot;</span>
+    <span class="marquee-item">NFC Chips</span><span class="marquee-item">&middot;</span>
+    <span class="marquee-item cyan">Grand Openings</span><span class="marquee-item">&middot;</span>
+    <span class="marquee-item">Branded Merch</span><span class="marquee-item">&middot;</span>
+    <span class="marquee-item terra">Custom 3D Printing</span><span class="marquee-item">&middot;</span>
+    <span class="marquee-item">Events &amp; Conferences</span><span class="marquee-item">&middot;</span>
+    <span class="marquee-item cyan">Miami Made</span><span class="marquee-item">&middot;</span>
+    <span class="marquee-item">No Minimums</span><span class="marquee-item">&middot;</span>
+    <span class="marquee-item terra">Clickers &amp; Keychains</span><span class="marquee-item">&middot;</span>
+    <span class="marquee-item">NFC Chips</span><span class="marquee-item">&middot;</span>
+    <span class="marquee-item cyan">Grand Openings</span><span class="marquee-item">&middot;</span>
+    <span class="marquee-item">Branded Merch</span><span class="marquee-item">&middot;</span>
   </div>
 </div>
 
 <div class="catalog-section">
-  <p class="filter-label">Filter by occasion</p>
-  <div class="filter-bar">
-    <button class="filter-pill active" data-filter="all" onclick="doFilter('all',this)">All</button>
-    <button class="filter-pill f-swag" data-filter="swag" onclick="doFilter('swag',this)">🎪 Swag & Conferences</button>
-    <button class="filter-pill f-personal" data-filter="personal" onclick="doFilter('personal',this)">🎉 Personal Events</button>
-    <button class="filter-pill f-business" data-filter="business" onclick="doFilter('business',this)">🏢 Business & Brand</button>
+  <div class="catalog-header">
+    <div class="catalog-title">The Catalog</div>
+    <div class="catalog-count">All products</div>
   </div>
-  <p class="showing-label" id="showLabel">Showing <strong>all 14 products</strong></p>
-  <div class="product-grid" id="grid">
-    <div class="no-results" id="noResults">
-      <div class="no-results-headline">Sounds like something we haven't made yet.</div>
-      <div class="no-results-sub">We love a challenge — tell us what you're looking for.</div>
-      <button onclick="inquire('a custom product')" class="card-btn" style="padding:12px 28px;font-size:12px;margin-top:8px;">Get It Made →</button>
-    </div>
-  </div>
+  <div class="product-grid" id="grid"></div>
 </div>
 
 <section class="contact-section" id="contact">
@@ -769,15 +366,15 @@ footer strong {
     <div>
       <p class="contact-eyebrow">Get In Touch</p>
       <h2 class="contact-headline">Let's make<br>something<br><em>worth keeping.</em></h2>
-      <p class="contact-body">Planning a birthday party, conference, or grand opening? Tell us about it — we'll figure out the perfect piece together. No minimums, no corporate nonsense.</p>
+      <p class="contact-body">Planning a birthday party, conference, or grand opening? Tell us about it &mdash; we'll figure out the perfect piece together. No minimums, no corporate nonsense.</p>
       <div class="contact-perks">
-        <div class="contact-perk"><span class="contact-perk-dot"></span>Birthdays, conferences, grand openings & more</div>
+        <div class="contact-perk"><span class="contact-perk-dot"></span>Birthdays, conferences, grand openings &amp; more</div>
         <div class="contact-perk"><span class="contact-perk-dot"></span>Personalized for every guest if you want</div>
-        <div class="contact-perk"><span class="contact-perk-dot"></span>No minimums — order 1 or 1,000</div>
+        <div class="contact-perk"><span class="contact-perk-dot"></span>No minimums &mdash; order 1 or 1,000</div>
         <div class="contact-perk"><span class="contact-perk-dot"></span>We reply within 24 hours</div>
       </div>
     </div>
-    <div class="contact-form" id="contactForm">
+    <div id="contactForm">
       <div class="form-row">
         <div class="form-group">
           <label class="form-label">Name</label>
@@ -788,11 +385,11 @@ footer strong {
           <input class="form-input" type="email" name="email" placeholder="your@email.com" required>
         </div>
       </div>
-      <div class="form-group">
+      <div class="form-group" style="margin-top:14px;">
         <label class="form-label">Business / Event</label>
         <input class="form-input" type="text" name="business" placeholder="Restaurant name, event, etc.">
       </div>
-      <div class="form-group">
+      <div class="form-group" style="margin-top:14px;">
         <label class="form-label">What are you interested in?</label>
         <select class="form-select" name="interest">
           <option value="">Select a product or idea...</option>
@@ -807,13 +404,13 @@ footer strong {
           <option>Something not in the catalog</option>
         </select>
       </div>
-      <div class="form-group">
+      <div class="form-group" style="margin-top:14px;">
         <label class="form-label">Message</label>
-        <textarea class="form-textarea" name="message" placeholder="Tell us about your event, party, or business — dates, quantities, ideas, anything. We'll take it from there."></textarea>
+        <textarea class="form-textarea" name="message" placeholder="Tell us about your event, party, or business &mdash; dates, quantities, ideas, anything."></textarea>
       </div>
-      <button class="form-submit" onclick="submitForm(event)">Send Message →</button>
+      <button class="form-submit" style="margin-top:14px;" onclick="submitForm(event)">Send Message &rarr;</button>
       <div class="form-success" id="formSuccess">
-        <div class="form-success-icon">🎉</div>
+        <div class="form-success-icon">&#127881;</div>
         <div class="form-success-title">You're in!</div>
         <div class="form-success-body">We got your message and will reply within 24 hours.</div>
       </div>
@@ -822,7 +419,7 @@ footer strong {
 </section>
 
 <footer>
-  <p><strong>PFR</strong> · Print Fail Repeat · All prices USD · MOQ 1 unit · Custom colors available</p>
+  <p><strong>PFR</strong> &middot; Print Fail Repeat &middot; All prices USD &middot; MOQ 1 unit &middot; Custom colors available</p>
 </footer>
 
 <div class="overlay" id="overlay" onclick="closePanel()"></div>
@@ -832,39 +429,10 @@ footer strong {
 </div>
 
 <script>
-
-// =============================================================
-// PRODUCT DATA
-// =============================================================
-//
-// HOW TO ADD PHOTOS:
-// ------------------
-// 1. Create a folder called "images" in the same folder as this file
-// 2. Drop your jpg/png files in there
-// 3. Name them clearly, e.g: dumpling-1.jpg, dumpling-2.jpg
-// 4. Reference them like this:
-//
-//    photos: []                                    ← no photo (shows emoji)
-//    photos: ["images/dumpling-1.jpg"]             ← one photo
-//    photos: ["images/dumpling-1.jpg",             ← multiple = thumbnails appear
-//             "images/dumpling-2.jpg",
-//             "images/dumpling-3.jpg"]
-//
-// HOW TO ADD A NEW PRODUCT:
-// -------------------------
-// Copy any existing product block below (from { to },)
-// Paste it at the end of the list (before the ];)
-// Change: id (next number), name, emoji, venues, price, desc, note, photos
-// Save, commit in GitHub Desktop, push — live in 60 seconds.
-//
-//
-// =============================================================
-
 const PRODUCTS = [
   {
     id:1, name:"NFC Logo Keychain", emoji:"🔑",
     tagline:"Tap to share your menu, specials, or socials.",
-    venues:["swag","personal","business"],
     price:"5.00",
     desc:"Tap-enabled NFC keychain with your logo embedded. Perfect for table-side digital menus, loyalty programs, or social links. Each chip is pre-programmed to your URL.",
     note:"Design fee added for orders under 25 · NFC chip included",
@@ -873,7 +441,6 @@ const PRODUCTS = [
   {
     id:23, name:"Custom Name Keychain", emoji:"✨",
     tagline:"Script-style name keychain in two colors. Our most personal piece.",
-    venues:["personal"],
     price:"5.00",
     desc:"A custom script-style keychain with any name, printed in two colors. Our most versatile events product — perfect for birthday parties, conferences, graduations, and any gathering where every guest deserves something made just for them.",
     note:"Personalized with name · Two color print · Price may vary with quantity",
@@ -883,7 +450,6 @@ const PRODUCTS = [
   {
     id:2, name:"Dumpling Clicker", emoji:"🥟",
     tagline:"Bao bun click-top in a woven bamboo steamer. Guests won't stop.",
-    venues:["personal"],
     price:"6.50",
     desc:"A satisfying click-top bao bun — woven bamboo steamer base with a fluffy bun on top. Guests won't stop clicking it. The most talked-about takeaway gift for any Asian restaurant.",
     note:"Also available as a keychain",
@@ -892,7 +458,6 @@ const PRODUCTS = [
   {
     id:16, name:"Custom Character Clicker", emoji:"🎭",
     tagline:"Your mascot as a clicker. Completely bespoke, one of a kind.",
-    venues:["swag","personal","business"],
     price:"8.00",
     desc:"Your restaurant mascot or character modeled and turned into a click mechanism. Completely bespoke — we design it and print it. One-of-a-kind branded merch that nobody else has.",
     note:"Design fee added for orders under 25",
@@ -901,7 +466,6 @@ const PRODUCTS = [
   {
     id:21, name:"Tennis Racket Keychain", emoji:"🎾",
     tagline:"Personalized with any name. Perfect for birthdays and sports events.",
-    venues:["personal"],
     price:"6.00",
     desc:"A miniature tennis racket keychain personalized with any name. Perfect party favor for tennis birthdays, club events, or sports conferences. Every guest gets one made just for them.",
     note:"Personalized with name · Price may vary with quantity",
@@ -911,7 +475,6 @@ const PRODUCTS = [
   {
     id:22, name:"Tennis Ball Clicker", emoji:"🎾",
     tagline:"Satisfying tennis ball click mechanism. Crowd pleaser every time.",
-    venues:["swag","personal","business"],
     price:"6.50",
     desc:"A realistic miniature tennis ball reimagined as a satisfying fidget clicker. Perfect for tennis-themed birthday parties, sports events, and anyone who can't resist clicking things.",
     note:"Available in multiple colors",
@@ -921,7 +484,6 @@ const PRODUCTS = [
   {
     id:3, name:"Sushi Clicker", emoji:"🍣",
     tagline:"Kawaii or realistic — both styles available as sushi clickers.",
-    venues:["business"],
     price:"6.50",
     desc:"Two styles, one obsession. Choose the kawaii version — adorable chibi nigiri or onigiri with cute faces. Or go realistic — hyper-detailed salmon and shrimp nigiri that look almost good enough to eat. Both click satisfyingly.",
     note:"Available as kawaii (nigiri or onigiri) or realistic (salmon or shrimp)",
@@ -930,7 +492,6 @@ const PRODUCTS = [
   {
     id:5, name:"Soy Sauce Fish Clicker", emoji:"🐠",
     tagline:"The soy sauce fish everyone knows — now a satisfying fidget clicker.",
-    venues:["business"],
     price:"6.50",
     desc:"The classic soy sauce fish bottle everyone knows from their takeout bag — reimagined as a satisfying fidget clicker. Available in multiple colors. Iconic silhouette, instant recognition.",
     note:"Available in multiple colors",
@@ -939,7 +500,6 @@ const PRODUCTS = [
   {
     id:18, name:"Taiyaki Ice Cream Clicker", emoji:"🍡",
     tagline:"Fish-shaped taiyaki with ice cream on top. Too cute to put down.",
-    venues:["business"],
     price:"6.50",
     desc:"A taiyaki fish cone with a swirl of ice cream on top — reimagined as a satisfying fidget clicker. One of our most instantly lovable designs. Perfect for any Asian café or dessert spot.",
     note:"Available in multiple colors",
@@ -948,7 +508,6 @@ const PRODUCTS = [
   {
     id:19, name:"Matcha Bowl Clicker", emoji:"🍵",
     tagline:"Aesthetic matcha bowl clicker. Plain or with a little whisk on top.",
-    venues:["business"],
     price:"6.50",
     desc:"A beautifully detailed matcha bowl with deep green fill — available plain or with a miniature whisk resting on top. Both click satisfyingly. The most aesthetic thing on any café counter.",
     note:"Available as plain bowl or bowl with whisk",
@@ -957,7 +516,6 @@ const PRODUCTS = [
   {
     id:6, name:"Boba Clicker & Keychains", emoji:"🧋",
     tagline:"Everything boba — clicker, jar keychain, or cup keychain.",
-    venues:["business"],
     price:"4.00",
     desc:"Three boba pieces, one vibe. The chunky boba cup clicker with dome click and pearl details. The tiny mason jar keychain packed with boba pearls. The iconic plastic cup keychain in kawaii style. Pick one or mix and match.",
     note:"Available as clicker ($6.50) or keychain ($4.00) · Multiple colors",
@@ -966,7 +524,6 @@ const PRODUCTS = [
   {
     id:7, name:"Ramen Bowl Keychain", emoji:"🍜",
     tagline:"Three styles — kawaii, black & white, or Naruto fishcake.",
-    venues:["business"],
     price:"4.00",
     desc:"Three ramen bowl keychains, each with its own personality. The kawaii version has an adorable face — perfect grand opening giveaway. The B&W version is minimal and modern. The Naruto version features the iconic fishcake topping — anime fans lose their minds.",
     note:"Available as kawaii, black & white, or Naruto style",
@@ -975,7 +532,6 @@ const PRODUCTS = [
   {
     id:20, name:"Matcha Whisk Charm Keychain", emoji:"🍃",
     tagline:"Tiny matcha whisk keychain. Instant recognition for any matcha lover.",
-    venues:["business"],
     price:"3.50",
     desc:"A miniature matcha whisk rendered in stunning detail — green bristles, bamboo handle, the whole thing. Lightweight keychain that any matcha lover will recognize immediately. Great counter merch for cafés.",
     note:"Available in multiple colors",
@@ -984,7 +540,6 @@ const PRODUCTS = [
   {
     id:12, name:"Chopstick Rests", emoji:"🥢",
     tagline:"Four styles — Kewpie, soy sauce, wavy noodle, or articulated fish.",
-    venues:["business"],
     price:"3.00",
     desc:"Playful chopstick rests that elevate any Asian restaurant table. Choose from Kewpie mayo bottle, soy sauce bottle, sculptural wavy noodle, or a fully articulated fish that wiggles when touched. All functional, all conversation starters.",
     note:"Available in 4 styles · Sets of 4-6 recommended",
@@ -992,176 +547,84 @@ const PRODUCTS = [
   }
 ];
 
-// =============================================================
-// VENUE TAGS — HOW TO ADD A NEW ONE
-// =============================================================
-// 1. Add it to VENUE_META below (copy any existing line)
-// 2. Add a color for it in the CSS section (search "vd-ramen" to find it)
-//    You need two entries: .vd-TAGNAME and .filter-pill.active.f-TAGNAME
-// 3. Add a filter button in the HTML (search "filter-bar" to find it)
-// 4. Add the tag string to any product's venues:[] array
-//
-// Example — adding "italian":
-//   VENUE_META: italian: { cls:"vd-italian", label:"🍕 Italian" }
-//   CSS: .vd-italian { background: #E8A02A; }
-//        .filter-pill.active.f-italian { background: #E8A02A; border-color: #E8A02A; }
-//   HTML button: <button class="filter-pill f-italian" data-filter="italian" onclick="doFilter('italian',this)">🍕 Italian</button>
-//   Product: venues:["ramen","italian"]
-// =============================================================
-const VENUE_META = {
-  swag:     { cls:"vd-swag",     label:"🎪 Swag & Conferences" },
-  personal: { cls:"vd-personal", label:"🎉 Personal Events"    },
-  business: { cls:"vd-business", label:"🏢 Business & Brand"   }
-};
-
-// Price lookup — checks for hardcoded price first, else uses formula
-// Clickers: $6.50 | Keychains: $4.00 | Chopstick Rests: $3.00
-// NFC Keychain: $5.00 | Custom Character: $8.00
-// Matcha Whisk Keychain: $3.50
-const FIXED_PRICES = {
-  1:  "5.00",   // NFC Logo Keychain
-  23: "5.00",   // Custom Name Keychain
-  2:  "6.50",   // Dumpling Clicker
-  16: "8.00",   // Custom Character Clicker
-  21: "6.00",   // Tennis Racket Keychain
-  22: "6.50",   // Tennis Ball Clicker
-  3:  "6.50",   // Sushi Clicker
-  5:  "6.50",   // Soy Sauce Fish Clicker
-  18: "6.50",   // Taiyaki Ice Cream Clicker
-  19: "6.50",   // Matcha Bowl Clicker
-  6:  "4.00",   // Boba Clicker & Keychains
-  7:  "4.00",   // Ramen Bowl Keychain
-  20: "3.50",   // Matcha Whisk Charm Keychain
-  12: "3.00",   // Chopstick Rests
-};
-
-function getPrice(p) {
-  return p.price;
-}
+function getPrice(p) { return p.price; }
 
 async function submitForm(e) {
   e.preventDefault();
   const btn = e.target;
   const form = document.getElementById('contactForm');
   const inputs = form.querySelectorAll('input,select,textarea');
-
   let valid = true;
   inputs.forEach(i => { if (i.required && !i.value) valid = false; });
   if (!valid) {
-    btn.style.background = 'var(--pop-red)';
+    btn.style.background = 'var(--terra)'; btn.style.color = '#fff';
     btn.textContent = 'Please fill in name & email →';
-    setTimeout(() => { btn.style.background = ''; btn.textContent = 'Send Message →'; }, 2500);
+    setTimeout(() => { btn.style.background = ''; btn.style.color = ''; btn.textContent = 'Send Message →'; }, 2500);
     return;
   }
-
-  btn.textContent = 'Sending...';
-  btn.disabled = true;
-
-const data = {};
-inputs.forEach(i => { if (i.name) data[i.name] = i.value; });
-
+  btn.textContent = 'Sending...'; btn.disabled = true;
+  const data = {};
+  inputs.forEach(i => { if (i.name) data[i.name] = i.value; });
   try {
     const res = await fetch('https://formspree.io/f/mqegevoz', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify(data)
     });
-
     const json = await res.json();
-    console.log('Formspree response:', json);
     if (res.ok) {
       inputs.forEach(i => i.value = '');
       btn.style.display = 'none';
       document.getElementById('formSuccess').style.display = 'block';
-    } else {
-      throw new Error(json.error || 'Unknown error');
-    }
+    } else { throw new Error(json.error || 'Unknown error'); }
   } catch(err) {
-    console.error('Form error:', err);
-    btn.textContent = 'Something went wrong — try again';
-    btn.disabled = false;
+    btn.textContent = 'Something went wrong — try again'; btn.disabled = false;
     setTimeout(() => { btn.textContent = 'Send Message →'; }, 3000);
   }
 }
 
 function buildCards() {
   const grid = document.getElementById('grid');
-  const nr = document.getElementById('noResults');
   PRODUCTS.forEach(p => {
     const hasPhoto = p.photos && p.photos.length > 0;
     const imgHTML = hasPhoto
       ? `<img src="${p.photos[0]}" alt="${p.name}" loading="lazy">`
       : `<span class="ph">${p.emoji}</span>`;
-    const dotsHTML = p.venues.map(v =>
-      `<span class="venue-dot ${VENUE_META[v].cls}" title="${VENUE_META[v].label}"></span>`
-    ).join('');
     const card = document.createElement('div');
     card.className = 'card';
-    card.dataset.venues = p.venues.join(',');
-    card.dataset.id = p.id;
     card.onclick = () => openPanel(p.id);
     card.innerHTML = `
       <div class="card-img">${imgHTML}</div>
-      <div class="card-venue-dots">${dotsHTML}</div>
       <div class="card-body">
         <div class="card-name">${p.name}</div>
         <div class="card-tagline">${p.tagline || ''}</div>
-        <div class="card-divider"></div>
         <div class="card-footer-row">
-          <div class="card-from"><span>1 item @</span>$${getPrice(p)}</div>
+          <div class="card-from"><span>from</span>$${getPrice(p)}</div>
           <button class="card-btn" onclick="event.stopPropagation();openPanel(${p.id})">View →</button>
         </div>
       </div>`;
-    grid.insertBefore(card, nr);
+    grid.appendChild(card);
   });
-}
-
-function doFilter(tag, btn) {
-  document.querySelectorAll('.filter-pill').forEach(b => b.classList.remove('active'));
-  btn.classList.add('active');
-  const cards = document.querySelectorAll('.card');
-  let n = 0;
-  cards.forEach(c => {
-    const show = tag === 'all' || c.dataset.venues.split(',').includes(tag);
-    c.classList.toggle('hidden', !show);
-    if (show) n++;
-  });
-  const lbl = tag === 'all' ? `all ${n} products` : `${n} product${n!==1?'s':''}`;
-  document.getElementById('showLabel').innerHTML = `Showing <strong>${lbl}</strong>`;
-  document.getElementById('noResults').classList.toggle('show', n === 0);
 }
 
 function openPanel(id) {
   const p = PRODUCTS.find(x => x.id === id);
   if (!p) return;
-  const singlePrice = getPrice(p);
   const allMedia = [...(p.photos || []), ...(p.video ? [p.video] : [])];
-const hasMedia = allMedia.length > 0;
-const mainHTML = hasMedia
-  ? (allMedia[0].endsWith('.mp4') || allMedia[0].endsWith('.mov')
-    ? `<video src="${allMedia[0]}" autoplay loop muted playsinline id="pmImg" style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></video>`
-    : `<img src="${allMedia[0]}" alt="${p.name}" id="pmImg">`)
-  : `<span class="ph-lg">${p.emoji}</span>`;
-const thumbsHTML = hasMedia
-  ? allMedia.map((src,i) => {
-      const isVid = src.endsWith('.mp4') || src.endsWith('.mov');
-      const inner = isVid
-        ? `<span style="font-size:22px;">▶️</span>`
-        : `<img src="${src}" alt="">`;
-      return `<div class="thumb ${i===0?'active':''}" onclick="swapImg('${src}',this)">${inner}</div>`;
-    }).join('')
-  : `<div class="thumb active">${p.emoji}</div>`;
-
-  const venuesText = p.venues.map(v => VENUE_META[v]?.label || v).join(' · ');
-
-  const designFee = p.note?.includes('$25')
-    ? `<p class="ptable-note">⭐ <strong>+$25 one-time design fee</strong> for custom artwork.</p>` : '';
-  const otherNote = (p.note && !p.note.includes('$25') && !p.note.includes('coming soon'))
-    ? `<p class="ptable-note">ℹ️ ${p.note}</p>` : '';
-
+  const hasMedia = allMedia.length > 0;
+  const mainHTML = hasMedia
+    ? (allMedia[0].match(/\.mp4$|\.mov$/)
+        ? `<video src="${allMedia[0]}" autoplay loop muted playsinline style="width:100%;height:100%;object-fit:cover;border-radius:6px;"></video>`
+        : `<img src="${allMedia[0]}" alt="${p.name}">`)
+    : `<span class="ph-lg">${p.emoji}</span>`;
+  const thumbsHTML = hasMedia
+    ? allMedia.map((src,i) => {
+        const isVid = src.match(/\.mp4$|\.mov$/);
+        return `<div class="thumb ${i===0?'active':''}" onclick="swapImg('${src}',this)">${isVid ? '▶️' : `<img src="${src}" alt="">`}</div>`;
+      }).join('')
+    : `<div class="thumb active">${p.emoji}</div>`;
+  const designFee = p.note?.includes('$25') ? `<p class="ptable-note">⭐ <strong>+$25 one-time design fee</strong> for custom artwork.</p>` : '';
+  const otherNote = (p.note && !p.note.includes('$25') && !p.note.includes('coming soon')) ? `<p class="ptable-note">ℹ️ ${p.note}</p>` : '';
   document.getElementById('panelInner').innerHTML = `
     <div class="panel-toprow">
       <div class="panel-name">${p.name}</div>
@@ -1169,29 +632,22 @@ const thumbsHTML = hasMedia
     </div>
     <div class="panel-main-img">${mainHTML}</div>
     <div class="panel-thumbs">${thumbsHTML}</div>
-    <div class="panel-venues"><span class="panel-venues-text">${venuesText}</span></div>
     <p class="panel-desc">${p.desc}</p>
-    <div class="ptable">
-     <div class="ptable-simple">
-  1 item @ <strong>$${singlePrice}</strong> · Bulk orders are a <em>significantly</em> better deal · Final price varies by design and customization
-</div>
+    <div class="ptable-simple">
+      1 item @ <strong>$${getPrice(p)}</strong> · Bulk orders are a <em>significantly</em> better deal · Final price varies by design and customization
     </div>
     ${designFee}${otherNote}
     <button class="panel-cta" onclick="inquire('${p.name}')">Inquire About This Item</button>`;
-
   document.getElementById('overlay').classList.add('active');
   document.getElementById('panel').classList.add('active');
   document.body.style.overflow = 'hidden';
 }
 
 function swapImg(src, thumb) {
-  const isVideo = src.endsWith('.mp4') || src.endsWith('.mov');
   const main = document.querySelector('.panel-main-img');
-  if (isVideo) {
-    main.innerHTML = `<video src="${src}" autoplay loop muted playsinline style="width:100%;height:100%;object-fit:cover;border-radius:12px;"></video>`;
-  } else {
-    main.innerHTML = `<img src="${src}" alt="" id="pmImg" style="width:100%;height:100%;object-fit:cover;">`;
-  }
+  main.innerHTML = src.match(/\.mp4$|\.mov$/)
+    ? `<video src="${src}" autoplay loop muted playsinline style="width:100%;height:100%;object-fit:cover;border-radius:6px;"></video>`
+    : `<img src="${src}" alt="" style="width:100%;height:100%;object-fit:cover;">`;
   document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
   thumb.classList.add('active');
 }
@@ -1206,26 +662,13 @@ function inquire(name) {
   closePanel();
   const select = document.querySelector('select[name="interest"]');
   if (select) {
-    const options = Array.from(select.options);
-    const match = options.find(o => o.text.toLowerCase().includes(name.split(' ')[0].toLowerCase()));
+    const match = Array.from(select.options).find(o => o.text.toLowerCase().includes(name.split(' ')[0].toLowerCase()));
     if (match) match.selected = true;
   }
-  setTimeout(() => {
-    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-  }, 350);
+  setTimeout(() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' }), 350);
 }
 
-// Filtered URL support — printfailrepeat.com?filter=restaurants or ?filter=events
-const urlParams = new URLSearchParams(window.location.search);
-// URL map: /conferences → swag, /events → personal, /business → business
-const pathFilter = {'/conferences':'swag', '/events':'personal', '/business':'business'}[window.location.pathname];
-const preFilter = pathFilter || urlParams.get('filter');
-if (preFilter) {
-  const btn = document.querySelector(`[data-filter="${preFilter}"]`);
-  if (btn) doFilter(preFilter, btn);
-}
 buildCards();
-
 </script>
 </body>
 </html>
